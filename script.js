@@ -53,13 +53,20 @@ const BullQR = {
         const canvas = this.dom.canvas.querySelector('canvas');
         
         // Prioriza o src da imagem gerada pela lib qrcodejs
-        const dataURL = img ? img.src : (canvas ? canvas.toDataURL() : null);
+        const dataURL = img ? img.src : (canvas ? canvas.toDataURL("image/png") : null);
 
         if (dataURL) {
             const link = document.createElement('a');
-            link.download = `BULL_QR_${Date.now()}.png`;
+            
+            // Atributos de download
             link.href = dataURL;
+            link.download = `BULL_QR_${Date.now()}.png`;
+            
+            // Reforço técnico para compatibilidade Mobile:
+            // Alguns navegadores exigem que o link esteja no DOM para disparar o download
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
     }
 };
