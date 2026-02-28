@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vull QR | Enterprise Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="app-container">
+        <section class="premium-card">
+            <header class="card-header">
+                <h1>QR Generator</h1>
+                <p>Otimização de arquitetura para visualização 100% íntegra.</p>
+            </header>
+
+            <div class="form-group">
+                <input type="text" id="user-input" placeholder="Insira o link aqui..." autocomplete="off">
+                <button id="generate-btn" class="btn-main">Gerar QR Code</button>
+            </div>
+
+            <div id="result-container" class="result-area hidden">
+                <div class="qr-wrapper">
+                    <div id="qrcode-canvas"></div>
+                </div>
+                <button id="download-btn" class="btn-sub">Baixar PNG</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
